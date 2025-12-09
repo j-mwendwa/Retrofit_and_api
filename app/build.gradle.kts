@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.retrofit_and_api"
+    namespace = "com.example.jmwendwa"
     compileSdk {
         version = release(36)
     }
