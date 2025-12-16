@@ -75,6 +75,14 @@ dependencies {
     // If you decide to use KSP instead of KAPT for Room, you'd replace 'kapt' with 'ksp'
     // ksp("androidx.room:room-compiler:2.6.1")
 
+    //Moshi
+    // Moshi
+    implementation("com.squareup.moshi:moshi:1.15.0") // Use the latest version
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.0") // Use the latest version if you're using Kotlin
+    // Retrofit Moshi Converter
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0") // Use the same Retrofit version
+
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
