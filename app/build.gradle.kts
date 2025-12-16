@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
+    // Add the KSP plugin for Room if you plan to use it instead of KAPT for Room
+    // id("com.google.devtools.ksp") version "1.9.22-1.0.18" // Check for the latest KSP version
 }
 
 android {
@@ -55,6 +57,7 @@ dependencies {
 
     // Hilt/Dagger
     implementation("com.google.dagger:hilt-android:2.51.1")
+    implementation(libs.androidx.room.common.jvm)
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
     kapt("androidx.hilt:hilt-compiler:1.2.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
@@ -63,6 +66,14 @@ dependencies {
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Room DB
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1") // Kotlin Extensions and Coroutines support for Room
+    kapt("androidx.room:room-compiler:2.6.1") // Annotation processor
+
+    // If you decide to use KSP instead of KAPT for Room, you'd replace 'kapt' with 'ksp'
+    // ksp("androidx.room:room-compiler:2.6.1")
 
 
     testImplementation(libs.junit)
